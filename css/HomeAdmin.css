@@ -8,7 +8,12 @@ img {
     width: 100%;
     height: 100%;
 }
-
+li {
+    list-style: none;
+}
+.box {
+    display: none;
+}
 h1,
 h2,
 h3,
@@ -21,11 +26,15 @@ ul {
     margin: 0;
 }
 
+.hidden {
+    display: none !important;
+}
+
 .admin {
     display: flex;
 
     .left {
-        height: 100vh;
+
         color: white;
         background-color: black;
         padding: 0 20px;
@@ -85,18 +94,65 @@ ul {
             border-bottom: 1px solid black;
 
             ul {
+
                 display: flex;
                 list-style: none;
                 padding: 0;
 
+                .oz {
+                    position: relative;
+
+                    p {
+                        position: absolute;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        top: -10px;
+                        left: 10px;
+                        border-radius: 50%;
+                        background-color: red;
+                        width: 20px;
+                        height: 20px;
+
+                        color: white;
+
+                    }
+
+                    i {
+                        margin-right: 30px;
+                        font-size: 1.5rem;
+                    }
+                }
+
+            }
+
+            .user {
+                position: relative;
+
                 i {
-                    margin-right: 30px;
+                    font-size: 1.5rem;
+                }
+
+                .user1 {
+                    position: absolute;
+                    right: 0px;
+                    border-radius: 5%;
+                    background-color: gray;
+                    z-index: 1;
+
+                    li {
+                        padding: 5px 10px;
+                        &:hover  {
+                            color: white;
+                            background-color: black;
+                        }
+                    }
+
+                
                 }
             }
 
-            i {
-                font-size: 1.5rem;
-            }
+
 
         }
 
@@ -130,134 +186,62 @@ ul {
                     display: flex;
                     justify-content: space-around;
 
-                    .add {
-                        display: flex;
-                        border-radius: 8%;
-                        background-color: green;
-                        padding: 0px 5px;
-                        height: 35px;
-                        align-items: center;
-
-                        i {
-                            background-color: white;
-                            width: 15px;
-                            height: 15px;
-                            border-radius: 50%;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            color: green;
-                            margin-right: 5px;
-                        }
-
-                        p {
-                            color: white;
-                        }
-                    }
-
-                    .cart {
-                        display: flex;
-                        border-radius: 8%;
-                        background-color: pink;
-                        padding: 0px 5px;
-                        height: 35px;
-                        align-items: center;
-                        border: 1px solid none;
-
-                        i {
-                            width: 15px;
-                            height: 15px;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            color: white;
-                            margin-right: 5px;
-
-                        }
-
-                        p {
-                            color: white;
-                        }
-                    }
-                }
-
-                .booking {
-                    display: flex;
-                    border-radius: 8%;
-                    background-color: yellow;
-                    padding: 0px 5px;
-                    height: 35px;
-                    align-items: center;
-
-                    width: 50%;
-                    margin-top: 15px;
-                    margin-left: 55px;
-
-                    i {
-                        width: 15px;
-                        height: 15px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        color: white;
-                        margin-right: 5px;
-                    }
-
-                    p {
-                        color: white;
-                    }
                 }
             }
         }
+
+
     }
 }
 
+
+
 @media screen and (min-width :1025px) {
     .left {
+
         position: relative;
-        .left-header {
-           .fa-shop{
-            display: none;
-           } 
-        }
-        
-        
+        height: 100vh;
+    }
+    .right {
+        height: 100vh;
+        overflow-y: auto;
     }
 }
 
 @media screen and (min-width :741px) and (max-width :1024px) {
     .left {
-        
         .left-header {
             h4 {
                 display: none;
             }
         }
+
         .left-body {
             h4 {
                 display: none;
             }
         }
+    }
+    .right {
+        height: 100vh;
+        overflow-y: auto;
     }
 }
 
 @media screen and (max-width : 741px) {
-    .admin{
+    .admin {
         flex-direction: column;
     }
+
     .left {
-        
         .left-header {
-            
-            
-            h4 {
-                display: none;
+            .left-icon {
+                right: 20px !important;
             }
         }
-        .left-body {
-            i,h4 {
-                display: none;
-            }
+
+        .left-main {
+            display: none;
         }
     }
 }
