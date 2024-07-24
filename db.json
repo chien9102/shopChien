@@ -1,0 +1,66 @@
+{
+    "tables": [
+        {
+            "id":1,
+            "nameCustomer": null,
+            "quantity": null,
+            "status":false
+        },
+        {
+            "id": 2,
+            "nameCustomer": null,
+            "quantity": null,
+            "status":true
+        },
+        {
+            "id": 3,
+            "nameCustomer": null,
+            "quantity": null,
+            "status":false
+        },
+        {
+            "id": 4,
+            "nameCustomer": null,
+            "quantity": null,
+            "status":true
+        },
+         {
+            "id": 5,
+            "nameCustomer": null,
+            "quantity": null,
+            "status":false
+        },
+        {
+            "id": 6,
+            "nameCustomer": null,
+            "quantity": null,
+            "status":true
+        }
+    ],
+    "foods" : [
+        {
+            "id":1,
+            "name": "Hamberger",
+            "price": "$39" ,
+            "img": "../img/hamberger.png"
+        },
+        {
+            "id":2,
+            "name": "BeefSteak",
+            "price": "$129" ,
+            "img": "../img/bittet.png"
+        },
+        {
+            "id":3,
+            "name": "DimSum",
+            "price": "$79" ,
+            "img": "../img/dimsum.png"
+        },
+        {
+            "id":4,
+            "name": "Fired chicken",
+            "price": "$199" ,
+            "img": "../img/garan.png"
+        }
+    ]
+}
