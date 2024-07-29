@@ -86,28 +86,184 @@
             <div class="box">
                 Dashboard
             </div>
-            <div class="box container mt-3">
+            <div class="box container mt-3"> <!-- main -->
                 <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-2 right-main"></div>
             </div>
 
-            <div class="box container mt-2">
-                <div class=" choose-table">
-                    <label for="">Choose a table</label>
-                    <select>
-                        <option selected disabled>Choose a table</option>
-                        <option>Table 1</option>
-                        <option>Table 2</option>
-                    </select>
-                    <button type="button" class="order btn btn-danger btn-sm ">Order</button>
-
+            <div class="box container mt-3"> <!-- food -->
+                <div class="choose-table mb-2">
+                    <div class="choose-left">
+                        <label for="">Choose a table</label>
+                        <select id="select-table">
+                            <option selected disabled>Choose a table</option>
+                        </select>
+                        <button type="button" class="order btn btn-danger btn-sm ">Order</button>
+                    </div>
+                    <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#addfood">Add Food</button>
                 </div>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-2 right-foods"></div>
             </div>
-            <div class="box">
-                Paybill
+            <div class="box container mt-3"> <!-- bill -->
+                <div class="choose-left">
+                    <label for="">Choose a table</label>
+                    <select id="select-bill">
+                        <option selected disabled>Choose a table</option>
+                    </select>
+                    <button type="button" class="order btn btn-danger btn-sm ">Pay Bill</button>
+                </div>
             </div>
-            <div class="box">
-                info
+            <div class="box container mt-3"> <!-- infomation -->
+                <div class="row row-cols-1 row-cols-md-2 row-cols-xl-2 right-ifo p-2">
+                    <div class="col mt-2">
+                        <div style="height: 400px;" class="card">
+                            <h5 class="card-header">AVATAR</h5>
+                            <div class="card-body">
+                                <img src="../img/anh.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mt-2">
+                        <div class="card ">
+                            <h5 class="card-header">INFORMATION</h5>
+                            <div class="card-body">
+                                <form class="row g-3">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="First name"
+                                            aria-label="First name">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="Last name"
+                                            aria-label="Last name">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="" class="form-label">Email Address</Address></label>
+                                        <input type="email" class="form-control" id="inputEmail4">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="" class="form-label">Address </label>
+                                        <input type="text" class="form-control" id="inputAddress2">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="" class="form-label">Phone</label>
+                                        <input type="number" class="form-control" id="inputCity">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="">Date :</label><br>
+                                        <input type="date" class="form-control">
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="input-group">
+                                            <div class="input-group-text">Choose File</div>
+                                            <input type="file" class="form-control" id="autoSizingInputGroup"
+                                                placeholder="No file choose">
+                                        </div>
+                                    </div>
+                                    <div class="d-grid gap-2 col-1 mx-auto">
+                                        <button class="btn btn-primary" type="button">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal add food -->
+        <div class="modal fade" id="addfood" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add New Food </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row g-3">
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Image Food :</label>
+                                <img style="width: 100px;height: 100px;margin-left: 100px;margin-bottom:10px" src="../img/dimsum.png" alt="">
+                                <input class="form-control" type="file" id="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Name Food</label>
+                                <input type="text" class="form-control" id="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Cost</label>
+                                <input   type="number" class="form-control" id="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal cart -->
+        <div class="modal fade" id="cart" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">List of order dishes</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table text-center">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td><img src="../img/hamberger.png" style="width: 50px;height:50px" alt=""></td>
+                                    <td>Hamberger</td>
+                                    <td>2</td>
+                                    <td>$39</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td><img src="../img/bittet.png" style="width: 50px;height:50px" alt=""></td>
+                                    <td>BeefSteak</td>
+                                    <td>1</td>
+                                    <td>$129</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td><img src="../img/dimsum.png" style="width: 50px;height:50px" alt=""></td>
+                                    <td>DimSum</td>
+                                    <td>2</td>
+                                    <td>$79</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td><img src="../img/garan.png" style="width: 50px;height:50px" alt=""></td>
+                                    <td>Fired chicken</td>
+                                    <td>2</td>
+                                    <td>$119</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <th scope="col">Total</th>
+                                    <td></td>
+                                    <th scope="col">$603</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button id="paybill" type="button" class="btn btn-primary">Pay Bill</button>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Modal booking -->
@@ -121,16 +277,16 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Customer Name</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Customer Name">
-                          </div>
-                          <div class="mb-3">
+                            <input type="text" class="form-control" id="nameCustomer" placeholder="Customer Name">
+                        </div>
+                        <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Quantity</label>
-                            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Quantity">
-                          </div>
+                            <input type="number" class="form-control" id="quantity" placeholder="Quantity">
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Gửi</button>
+                        <button type="button" id="editTable" class="btn btn-primary">Gửi</button>
                     </div>
                 </div>
             </div>

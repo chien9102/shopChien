@@ -4,7 +4,7 @@ const icon2 = document.querySelector(".left-main");
 
 icon.addEventListener("click",()=>{
     listh4.forEach(h4=>{
-        h4.classList.toggle("hidden")
+        h4.classList.toggle("hidden");
     });
   icon2.classList.toggle("left-main");
 });

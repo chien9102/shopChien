@@ -33,9 +33,10 @@ ul {
     display: none !important;
 }
 
+
 .admin {
     display: flex;
-    
+
 
     .left {
 
@@ -88,7 +89,23 @@ ul {
     .right {
         flex-grow: 1;
         background-color: darkkhaki;
-
+        .choose-table {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .choose-left {
+                  display: flex;
+                  align-items: center;
+                select {
+                    font-size: 10px;
+                    margin: 0 5px;
+                    padding: 5px;
+                }
+            }
+            button {
+                font-size: 0.8rem;
+            }
+        }
         .right-header {
             height: 70px;
             display: flex;
@@ -96,7 +113,6 @@ ul {
             align-items: center;
             padding: 0 30px;
             border-bottom: 1px solid black;
-
             ul {
 
                 display: flex;
@@ -117,7 +133,6 @@ ul {
                         background-color: red;
                         width: 20px;
                         height: 20px;
-
                         color: white;
 
                     }
@@ -156,19 +171,9 @@ ul {
 
                 }
             }
-
-
-
         }
 
-
         .right-main {
-            .choose-table {
-                button {
-                    color: black;
-                }
-            }
-
             .card {
                 h6 {
                     width: 20px;
@@ -220,36 +225,6 @@ ul {
                     align-items: center;
                     flex-direction: column;
 
-                    .card-bodyfood1 {
-                        display: flex;
-
-                        margin-bottom: 10px;
-
-                        p {
-                            display: flex;
-                            align-items: center;
-                            margin-left: 10px;
-                            margin-right: 10px;
-                            border-radius: 5%;
-                            border: 1px solid black;
-                            padding: 10px;
-                            width: 30px;
-                            height: 30px;
-                        }
-
-                        i {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            margin-top: 5px;
-                            border-radius: 50%;
-                            background-color: pink;
-                            width: 20px;
-                            height: 20px;
-                            color: white;
-                        }
-
-                    }
                 }
 
             }
@@ -272,23 +247,13 @@ ul {
                     justify-content: center;
                     align-items: center;
                     color: white;
-                    margin-top: 10px;
-                    margin-left: 10px;
                 }
 
                 .food-header {
                     display: flex;
                     justify-content: space-between;
 
-                    p {
-                        margin-top: 10px;
-
-                    }
-
-                    i {
-                        margin-top: 10px;
-                        margin-right: 10px;
-                    }
+                    
 
                 }
 
@@ -310,31 +275,26 @@ ul {
 
                     .card-bodyfood1 {
                         display: flex;
-
                         margin-bottom: 10px;
-
-                        p {
-                            display: flex;
-                            align-items: center;
-                            margin-left: 10px;
-                            margin-right: 10px;
-                            border-radius: 5%;
-                            border: 1px solid black;
-                            padding: 10px;
+                        input{
                             width: 30px;
                             height: 30px;
+                            margin-top: 7px;
+                            margin-left: 10px;
+                            margin-right: 10px;
+                            text-align: center;
                         }
 
-                        i {
+                        button {
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            margin-top: 5px;
+                            margin-top: 10px;
                             border-radius: 50%;
                             background-color: pink;
-                            width: 20px;
-                            height: 20px;
-                            color: white;
+                            width: 25px;
+                            height: 25px;
+                            color: rgb(121, 36, 36);
                         }
 
                     }
@@ -342,7 +302,21 @@ ul {
 
             }
         }
-
+        .right-ifo {
+            .card{
+              .card-body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    
+                    border-radius: 50%;
+                    width: 250px;
+                    height: 250px;
+                }
+              }  
+            }
+        }
 
     }
 }
