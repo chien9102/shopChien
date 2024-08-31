@@ -26,7 +26,26 @@ leftbody.forEach((element,index) => {
         element.style.color = "red";
         box.forEach(element => element.style.display = "none");
         box[index].style.display = "block";
+        localStorage.setItem("index",index);
     })
 });
 
+var index = localStorage.getItem("index");
+leftbody[index].style.color = "red";
+box[index].style.display = "block" ;
 
+ document.getElementById("logout").addEventListener("click" ,()=>{
+    window.location.href = "Login.html";
+ })
+
+ 
+ function getAvatar () {
+    const acconut = JSON.parse(localStorage.getItem("account"));
+    if(acconut) {
+        const anhbia = document.getElementById("anhbia");
+        const product1 = document.getElementById("anhbody");
+        anhbia.src = acconut.img ;
+        product1.src = acconut.img ;
+    }
+ }
+ getAvatar ();

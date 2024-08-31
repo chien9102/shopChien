@@ -65,7 +65,7 @@
                     </div>
                     <div class="oz">
                         <li><i class="fa-solid fa-bell"></i></li>
-                        <p>3</p>
+                        <p id="sinh"></p>
                     </div>
                     <div class="oz">
                         <li><i class="fa-regular fa-envelope"></i></li>
@@ -73,18 +73,30 @@
                     </div>
                 </ul>
                 <div class="user">
-                    <i class="fa-solid fa-house-user"></i>
+                    <img id="anhbia" style="border-radius: 50%; width: 35px; height: 35px;" src="" alt="">
+                    
                     <div class="hidden user1">
-                        <li>UserName</li>
+                        <li>User Name</li>
                         <li>My Profile</li>
                         <li>Setting</li>
                         <hr>
-                        <li>Logout</li>
+                        <li id="logout">Logout</li>
                     </div>
                 </div>
             </div>
-            <div class="box">
-                Dashboard
+            <!-- Dashboard -->
+            <div class="box Dashboard">
+                <div class="container mt-5">
+                    <div class="row row-cols-2 ">
+                        <div class="col">
+                            <div class="bar-chart"> </div>
+                            <h4 class="text-center mt-3">1. Biểu đồ hình cột biểu thị danh sách bàn </h4>
+                        </div>
+                        <div class="col">
+                            <div class="pie-chart mb-3"> </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="box container mt-3"> <!-- main -->
                 <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-2 right-main"></div>
@@ -93,13 +105,13 @@
             <div class="box container mt-3"> <!-- food -->
                 <div class="choose-table mb-2">
                     <div class="choose-left">
-                        <label for="">Choose a table</label>
+                        <label>Choose a table</label>
                         <select id="select-table">
-                            <option selected disabled>Choose a table</option>
+                            <option value="" selected disabled>Choose a table</option>
                         </select>
-                        <button type="button" class="order btn btn-danger btn-sm ">Order</button>
+                        <button id="orderByTable" type="button" class="order btn btn-danger btn-sm ">Order</button>
                     </div>
-                    <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+                    <button onclick="resetForm()" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
                         data-bs-target="#addfood">Add Food</button>
                 </div>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-2 right-foods"></div>
@@ -107,11 +119,26 @@
             <div class="box container mt-3"> <!-- bill -->
                 <div class="choose-left">
                     <label for="">Choose a table</label>
-                    <select id="select-bill">
+                    <select id="select-bill" onchange="onChangBill()">
                         <option selected disabled>Choose a table</option>
                     </select>
-                    <button type="button" class="order btn btn-danger btn-sm ">Pay Bill</button>
+                    <button id="pay-bill" type="button" class="order btn btn-danger btn-sm ">Pay Bill</button>
                 </div>
+
+                <table style="text-align: center;" class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bill-food">
+
+                    </tbody>
+                </table>
             </div>
             <div class="box container mt-3"> <!-- infomation -->
                 <div class="row row-cols-1 row-cols-md-2 row-cols-xl-2 right-ifo p-2">
@@ -119,21 +146,21 @@
                         <div style="height: 400px;" class="card">
                             <h5 class="card-header">AVATAR</h5>
                             <div class="card-body">
-                                <img src="../img/anh.png" alt="">
+                                <img id="anhbody" src="../img/anh.png" alt="">
                             </div>
                         </div>
                     </div>
-                    <div class="col mt-2">
+                    <div id="info" class="col mt-2">
                         <div class="card ">
                             <h5 class="card-header">INFORMATION</h5>
                             <div class="card-body">
                                 <form class="row g-3">
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" placeholder="First name"
+                                        <input id="fname" type="text" class="form-control" placeholder="First name"
                                             aria-label="First name">
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" placeholder="Last name"
+                                        <input id="lname" type="text" class="form-control" placeholder="Last name"
                                             aria-label="Last name">
                                     </div>
                                     <div class="col-12">
@@ -145,22 +172,22 @@
                                         <input type="text" class="form-control" id="inputAddress2">
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="" class="form-label">Phone</label>
-                                        <input type="number" class="form-control" id="inputCity">
+                                        <label  for="" class="form-label">Phone</label>
+                                        <input type="number" class="form-control" id="Phone">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="">Date :</label><br>
-                                        <input type="date" class="form-control">
+                                        <input id="datef" type="date" class="form-control">
                                     </div>
                                     <div class="col-12">
                                         <div class="input-group">
                                             <div class="input-group-text">Choose File</div>
-                                            <input type="file" class="form-control" id="autoSizingInputGroup"
+                                            <input id="file1" type="file" class="form-control" id="autoSizingInputGroup"
                                                 placeholder="No file choose">
                                         </div>
                                     </div>
                                     <div class="d-grid gap-2 col-1 mx-auto">
-                                        <button class="btn btn-primary" type="button">Submit</button>
+                                        <button  class="btn btn-primary" type="submit">Submit</button>
                                     </div>
                                 </form>
                             </div>
@@ -172,33 +199,40 @@
         <!-- Modal add food -->
         <div class="modal fade" id="addfood" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Add New Food </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row g-3">
-                            <div class="mb-3">
-                                <label for="formFile" class="form-label">Image Food :</label>
-                                <img style="width: 100px;height: 100px;margin-left: 100px;margin-bottom:10px" src="../img/dimsum.png" alt="">
-                                <input class="form-control" type="file" id="">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Name Food</label>
-                                <input type="text" class="form-control" id="">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Cost</label>
-                                <input   type="number" class="form-control" id="">
+                <form action="" id="add-chien"  class="needs-validation" novalidate>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row g-3">
+                                <div class="mb-3 d-none">
+                                    <input type="text" class="form-control" id="idfood">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label">Image Food :</label>
+                                    <img id="img-product"
+                                        style="width: 100px;height: 100px;margin-left: 100px;margin-bottom:10px"
+                                        src="../img/logo.png" alt="">
+                                    <input required class="form-control" type="file" id="file-product">
+                                </div>
+                                <div class="mb-3 ">
+                                    <label for="exampleFormControlInput1" class="form-label">Name Food</label>
+                                    <input required type="text" class="form-control" id="namefood">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Cost</label>
+                                    <input required type="number" class="form-control" id="costfood">
+                                </div>
                             </div>
                         </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Add</button>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Add</button>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
         <!-- Modal cart -->
@@ -220,48 +254,16 @@
                                     <th scope="col">Price</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td><img src="../img/hamberger.png" style="width: 50px;height:50px" alt=""></td>
-                                    <td>Hamberger</td>
-                                    <td>2</td>
-                                    <td>$39</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td><img src="../img/bittet.png" style="width: 50px;height:50px" alt=""></td>
-                                    <td>BeefSteak</td>
-                                    <td>1</td>
-                                    <td>$129</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td><img src="../img/dimsum.png" style="width: 50px;height:50px" alt=""></td>
-                                    <td>DimSum</td>
-                                    <td>2</td>
-                                    <td>$79</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td><img src="../img/garan.png" style="width: 50px;height:50px" alt=""></td>
-                                    <td>Fired chicken</td>
-                                    <td>2</td>
-                                    <td>$119</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <th scope="col">Total</th>
-                                    <td></td>
-                                    <th scope="col">$603</th>
-                                </tr>
+                            <tbody id="cart-food">
+
+
                             </tbody>
                         </table>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button id="paybill" type="button" class="btn btn-primary">Pay Bill</button>
+                        <button id="paybill" data-bs-dismiss="modal" type="button" class="btn btn-primary">Pay
+                            Bill</button>
                     </div>
                 </div>
             </div>
@@ -269,33 +271,70 @@
         <!-- Modal booking -->
         <div class="modal fade" id="booking" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">TABLE BOOKING</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Customer Name</label>
-                            <input type="text" class="form-control" id="nameCustomer" placeholder="Customer Name">
+                <form action="" id="editTable" class="needs-validation" novalidate>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">TABLE BOOKING</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Quantity</label>
-                            <input type="number" class="form-control" id="quantity" placeholder="Quantity">
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Customer Name</label>
+                                <input required type="text" class="form-control" id="nameCustomer"
+                                    placeholder="Customer Name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Quantity</label>
+                                <input required type="number" class="form-control" id="quantity" placeholder="Quantity">
+                            </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" id="editTable" class="btn btn-primary">Gửi</button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Gửi</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal delete-->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Bạn có muốn xóa không</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="anh" style="width: 30%;" src="../img/logo.png" alt="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="deleted" type="button" class="btn btn-primary">Delete</button>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+    <!-- Add this script tag to your HTML file -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <!-- Firebase Storage -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="../js/validation.js"></script>
     <script src="../js/homeadmin.js"></script>
+    <script src="../js/firebase-config.js"></script>
     <script src="../js/api.js"></script>
+    <script src="../js/file.js"></script>
     <script src="../js/getTable.js"> </script>
     <script src="../js/getFood.js"> </script>
+    <script src="..//js/getOrder.js"></script>
+    <script src="..//js/getbill.js"></script>
+    <script src="../js/chart.js"></script>
+    <script src="../js/ifo.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>

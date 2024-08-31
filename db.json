@@ -4,24 +4,24 @@
       "id": "1",
       "nameCustomer": null,
       "quantity": null,
-      "status": false
+      "status": true
     },
     {
       "id": "2",
-      "nameCustomer": "dsfvdf",
-      "quantity": "6",
-      "status": false
+      "nameCustomer": null,
+      "quantity": null,
+      "status": true
     },
     {
       "id": "3",
-      "nameCustomer": null,
-      "quantity": null,
+      "nameCustomer": "",
+      "quantity": "",
       "status": false
     },
     {
       "id": "4",
-      "nameCustomer": "",
-      "quantity": "",
+      "nameCustomer": "dsfvdf",
+      "quantity": "5",
       "status": false
     },
     {
@@ -32,53 +32,79 @@
     },
     {
       "id": "6",
-      "nameCustomer": null,
-      "quantity": null,
-      "status": true
+      "nameCustomer": "dsfvdf",
+      "quantity": "4",
+      "status": false
     }
   ],
   "foods": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Hamberger",
       "price": 39,
       "img": "../img/hamberger.png"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "BeefSteak",
       "price": "129",
       "img": "../img/bittet.png"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "DimSum",
       "price": 79,
       "img": "../img/dimsum.png"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Fired chicken",
       "price": 199,
       "img": "../img/garan.png"
+    },
+    {
+      "id": "5",
+      "name": "pizza",
+      "price": 30,
+      "img": "https://firebasestorage.googleapis.com/v0/b/food-35b0e.appspot.com/o/images%2Fpizza.png?alt=media&token=912092f9-78a1-49f6-8e5b-f89ea0d95319"
+    },
+    {
+      "id": "6",
+      "name": "thai xao",
+      "price": 35,
+      "img": "https://firebasestorage.googleapis.com/v0/b/food-35b0e.appspot.com/o/images%2Fpad%20thai.png?alt=media&token=c25f80fd-1120-4665-8368-9ae2d5fa9a55"
+    },
+    {
+      "name": "spageti",
+      "price": 30,
+      "img": "https://firebasestorage.googleapis.com/v0/b/food-35b0e.appspot.com/o/images%2Fspageti.png?alt=media&token=802cfd19-cd57-4edd-822a-ba084bda85bc",
+      "id": "7"
     }
   ],
-  "order":[
+  "order": [
     {
-      "id": 1,
-      "items":
-      [
+      "id": "5",
+      "items": [
         {
-          "idFood": 1,
-          "quantity": 5
+          "idFood": "1",
+          "quantity": 3
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "items": [
+        {
+          "idFood": "1",
+          "quantity": 3
         },
         {
-          "idFood": 2,
-          "quantity": 5
+          "idFood": "2",
+          "quantity": 2
         },
         {
-          "idFood": 3,
-          "quantity": 5
+          "idFood": "3",
+          "quantity": 2
         }
       ]
     }
